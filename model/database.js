@@ -12,7 +12,7 @@ const con = mysql.createConnection({
   host: DB_HOST || "127.0.0.1",
   user: DB_USER || "root",
   password: DB_PASS,
-  database: DB_NAME || "todos",
+  database: DB_NAME || "medication",
   multipleStatements: true
 });
 
@@ -24,7 +24,7 @@ con.connect(function(err) {
   let sql = fs.readFileSync(__dirname + "/init_db.sql").toString();
   con.query(sql, function(err, result) {
     if (err) throw err;
-    console.log("Table creation `items` was successful!");
+    console.log("Table creation `pills` was successful!");
 
     console.log("Closing...");
   });
