@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 const db = require("../model/helper");
 
-/* GET home page. */
+/* GET home page. 
 router.get('/', function(req, res, next) {
   res.send( "You've already made it here.");
-});
+});*/
 
 router.get("/pills", async function(req, res) {
   // Devuelve la lista completa de items

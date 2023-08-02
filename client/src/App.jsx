@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/medication" element={<PillsListPage />} />
           <Route path="/add-pill" element={<AddPillPage />} />
-          <Route path="/pill/:pill_id" element={<PillDetailPage />} />
+          <Route path="/pills/:pill_id" element={<PillDetailPage />} />
         </Routes>
       </main>
     </>

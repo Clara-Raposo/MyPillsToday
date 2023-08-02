@@ -1,3 +1,4 @@
 # scaffolding-demo
-
-Cambiar el nombre de la base de datos
+npm run migrate
+poner en la terminal npm start
+entrat en la carpetaa client y poner npm run dev

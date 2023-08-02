@@ -25,13 +25,13 @@ export const PillsListPage = () =>{
 
     return <div>
         <h1>My medication</h1>
+
+        { /*error && <p>{error}</p>*/}
         
         <ul>
             {pills.map( pill => (
             <li key={pill.id}>
-                {pill.name}
-                {pill.dosis}
-                {pill.frecuency}
+                <Link to={`pills/${pill.id}`}>{pill.name}</Link>
 
             </li>))}
         </ul>
