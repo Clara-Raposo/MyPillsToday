@@ -18,6 +18,19 @@ router.get("/pills", async function(req, res) {
   }
 });
 
+router.get("/pills/:pills_id", async function(req, res) {
+  // Devuelve la lista completa de items
+  try {
+    const result = await db(
+      `SELECT * FROM pills WHERE id = ${req.params.pills_id};`
+    );
+
+    res.send(result.data)
+  }catch (err) {
+    res.status(500).send(err);
+  }
+});
+
 router.post("/pills", async function(req, res) {
   const body = req.body; //obtiene los datos del body
   const sql = `INSERT INTO pills(name, dosis, frecuency) VALUES ('${body.name}', ${body.dosis}, '${body.frecuency}')`; //manda la orden a la base de datos
