@@ -5,6 +5,8 @@ import { Routes, Route, Link } from "react-router-dom";
 import { PillsListPage } from "./pages/PillsListPage.jsx";
 import { AddPillPage } from "./pages/AddPillPage.jsx";
 import { PillDetailPage } from "./pages/PillDetailPage.jsx";
+import { PillCreatedPage } from "./pages/PillCreatedPage.jsx";
+import { DeletedPillPage } from "./pages/DeletedPillPage.jsx";
 import "./App.css";
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
           <Route path="/medication" element={<PillsListPage />} />
           <Route path="/add-pill" element={<AddPillPage />} />
           <Route path="/pills/:pill_id" element={<PillDetailPage />} />
+          <Route path="/new-pill-created" element={<PillCreatedPage />} />
+          <Route path="/deleted-pill" element={<DeletedPillPage />} />
         </Routes>
       </main>
     </>

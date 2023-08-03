@@ -9,14 +9,17 @@ export const PillsListPage = () =>{
 
     useEffect(() =>{
         getPills()
-        console.log(getPills())
+        console.log(pills)
     },[])
 
     const getPills = () =>{
-        fetch('/pills')
-        .then(response => response.json())
+        fetch('api/pills')
+        .then(response => {
+            console.log(response)
+            return response.json()
+        })
         .then(pills => {
-            setPills(pills)
+           setPills(pills)
         })
         .catch(error => {
             setError(error)
@@ -31,7 +34,7 @@ export const PillsListPage = () =>{
         <ul>
             {pills.map( pill => (
             <li key={pill.id}>
-                <Link to={`pills/${pill.id}`}>{pill.name}</Link>
+               {pill.name}
 
             </li>))}
         </ul>
@@ -39,3 +42,5 @@ export const PillsListPage = () =>{
     </div>
 
 }
+
+// <Link to={`pills/${pill.id}`}>{pill.name}</Link>
