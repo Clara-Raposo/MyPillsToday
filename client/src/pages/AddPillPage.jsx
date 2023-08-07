@@ -21,12 +21,11 @@ export const AddPillPage = () =>{
     const handleSubmit = (event) =>{
         event.preventDefault()
         addPill(pill)
-
-        navigate(`/new-pill-created`)
+       navigate(`/new-pill-created`)
     }
 
     const addPill = async(pill) => {
-        await fetch("/pills", {
+        await fetch("api/pills", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -39,7 +38,7 @@ export const AddPillPage = () =>{
     }
 
     return <div>
-        <form onSubmit={()=>handleSubmit()}>
+        <form onSubmit={(e)=>handleSubmit(e)}>
             <label>Nombre
                 <input type="text" value={pill.name} name = "name" onChange={e => handleChange(e)}></input>
             </label>

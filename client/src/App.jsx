@@ -7,6 +7,7 @@ import { AddPillPage } from "./pages/AddPillPage.jsx";
 import { PillDetailPage } from "./pages/PillDetailPage.jsx";
 import { PillCreatedPage } from "./pages/PillCreatedPage.jsx";
 import { DeletedPillPage } from "./pages/DeletedPillPage.jsx";
+import {Configuration } from "./pages/Configuration.jsx";
 import "./App.css";
 
 function App() {
@@ -19,12 +20,16 @@ function App() {
     <div>
     <Link to="/add-pill">Add a pill</Link>
     </div>
+    <div>
+    <Link to="/configuration">Ajustes</Link>
+    </div>
       
       <main>
         <Routes>
+          <Route path="/configuration" element={<Configuration />} />
           <Route path="/medication" element={<PillsListPage />} />
           <Route path="/add-pill" element={<AddPillPage />} />
-          <Route path="/pills/:pill_id" element={<PillDetailPage />} />
+          <Route path="medication/pills/:pill_id" element={<PillDetailPage />} />
           <Route path="/new-pill-created" element={<PillCreatedPage />} />
           <Route path="/deleted-pill" element={<DeletedPillPage />} />
         </Routes>

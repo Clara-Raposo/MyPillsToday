@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import {NavLink} from 'react-router-dom'
 
 
 export const PillsListPage = () =>{
@@ -29,18 +30,31 @@ export const PillsListPage = () =>{
     return <div>
         <h1>My medication</h1>
 
-        { /*error && <p>{error}</p>*/}
+        { error && <p>{error}</p>}
         
         <ul>
             {pills.map( pill => (
             <li key={pill.id}>
-               {pill.name}
+             
+              <NavLink to={`pills/${pill.id}`}>{pill.name}</NavLink>
 
             </li>))}
         </ul>
+       
         
     </div>
 
 }
 
-// <Link to={`pills/${pill.id}`}>{pill.name}</Link>
+/*
+ 
+
+
+ <main>
+            <Routes>
+                <Route path="/pills/:pill_id" element={<PillDetailPage />} />
+
+            </Routes>
+        </main>
+
+*/

@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export const PillDetailPage = () =>{
-    const {id} = useParams()
+    const {pill_id} = useParams()
     const [pill, setPill] = useState("null")
     const [error, setError] = useState("")
 
 
     useEffect(() =>{
         getPill()
-        console.log(getPills())
-    },[id])
+    },[pill_id])
 
     const getPill = () => {
-        fetch(`/pills/${id}`)
+        fetch(`/api/pills/${pill_id}`)
             .then((response) => response.json())
             .then((pill) => 
             setPill(pill))
@@ -22,8 +22,8 @@ export const PillDetailPage = () =>{
             })
     }
 
-    const deletePill = (id) => {
-        fetch(`/pills/${id}`, {
+    const deletePill = (pill_id) => {
+        fetch(`api/pills/${pill_id}`, {
             method: "DELETE"
           })
         navigate(`/deleted-pill`)
@@ -36,6 +36,7 @@ export const PillDetailPage = () =>{
         <button type='button' onClick={() => deletePill(pill.id)}>ELIMINAR</button>
 
         </div>}
-        
-        <Link to="/medication">Volver a la Lista </Link></div>
+        <Link to="/medication">Volver a la Lista </Link>
+        </div>
 }
+//
