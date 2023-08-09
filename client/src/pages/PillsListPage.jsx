@@ -46,15 +46,3 @@ export const PillsListPage = () =>{
 
 }
 
-/*
- 
-
-
- <main>
-            <Routes>
-                <Route path="/pills/:pill_id" element={<PillDetailPage />} />
-
-            </Routes>
-        </main>
-
-*/

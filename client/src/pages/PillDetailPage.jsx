@@ -13,7 +13,7 @@ export const PillDetailPage = () =>{
     },[pill_id])
 
     const getPill = () => {
-        fetch(`/api/pills/${pill_id}`)
+        fetch(`http://localhost:5000/api/pills/${pill_id}`)
             .then((response) => response.json())
             .then((pill) => 
             setPill(pill))
@@ -23,7 +23,7 @@ export const PillDetailPage = () =>{
     }
 
     const deletePill = (pill_id) => {
-        fetch(`api/pills/${pill_id}`, {
+        fetch(`http://localhost:5000/api/pills/${pill_id}`, {
             method: "DELETE"
           })
         navigate(`/deleted-pill`)
@@ -39,4 +39,4 @@ export const PillDetailPage = () =>{
         <Link to="/medication">Volver a la Lista </Link>
         </div>
 }
-//
+
