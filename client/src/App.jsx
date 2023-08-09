@@ -8,7 +8,7 @@ import { PillDetailPage } from "./pages/PillDetailPage.jsx";
 import { PillCreatedPage } from "./pages/PillCreatedPage.jsx";
 import { DeletedPillPage } from "./pages/DeletedPillPage.jsx";
 import {Configuration } from "./pages/Configuration.jsx";
-import {AlarmsChanged} from ".pages/AlarmsChanged.jsx"
+import {AlarmsChanged} from "./pages/AlarmsChanged.jsx"
 import "./App.css";
 
 function App() {

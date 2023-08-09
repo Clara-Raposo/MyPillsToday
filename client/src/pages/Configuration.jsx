@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import {Link} from "react-router-dom"
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Configuration = () => {
     const [time, setTime] = useState("")
@@ -16,6 +17,8 @@ export const Configuration = () => {
         hours:"",
         minutes: ""
     })
+    const navigate = useNavigate()
+
 
     const getTimeString = ({ hours, minutes }) => {
         //convierte el tiempo en un string
@@ -38,6 +41,8 @@ export const Configuration = () => {
 
     const handleSubmit = (event) =>{
         event.preventDefault()
+        
+        navigate(`/changed-alarms`)
     }
 
     const handleChangeBreakfast = (e) =>{
