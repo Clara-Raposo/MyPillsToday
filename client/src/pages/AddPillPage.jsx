@@ -21,7 +21,7 @@ export const AddPillPage = () =>{
     const handleSubmit = (event) =>{
         event.preventDefault()
         addPill(pill)
-       navigate(`/new-pill-created`)
+       navigate(`/new-pill-created/${pill.id}`)
     }
 
     const addPill = async(pill) => {

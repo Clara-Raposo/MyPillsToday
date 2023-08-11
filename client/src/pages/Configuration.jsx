@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const Configuration = () => {
+export const Configuration = ({onSubmit}) => {
     const [time, setTime] = useState("")
     const [breakfastAlarm, setBreakfastAlarm] = useState({
         hours:"",
@@ -20,20 +20,23 @@ export const Configuration = () => {
     const navigate = useNavigate()
 
 
-    const getTimeString = ({ hours, minutes }) => {
+    const getTimeString = ({ hours, minutes, day, month, year }) => {
         //convierte el tiempo en un string
         if (minutes / 10 < 1){
             minutes = "0" + minutes;
         }
-        return `${hours}:${minutes}`
+        return `Hora: ${hours}:${minutes} Fecha: ${day}/${month}/${year}`
     }
 
     const renderTime = () =>{
         const currentDate = new Date()
         let hours = currentDate.getHours()
         let minutes = currentDate.getMinutes()
+        let day = currentDate.getDate()
+        let month = currentDate.getMonth()
+        let year = currentDate.getFullYear()
         
-        const timeString = getTimeString({ hours, minutes })
+        const timeString = getTimeString({ hours, minutes, day, month, year })
         setTime(timeString)
     }
 
@@ -41,6 +44,8 @@ export const Configuration = () => {
 
     const handleSubmit = (event) =>{
         event.preventDefault()
+
+        onSubmit(breakfastAlarm, lunchAlarm, dinerAlarm)
         
         navigate(`/changed-alarms`)
     }
