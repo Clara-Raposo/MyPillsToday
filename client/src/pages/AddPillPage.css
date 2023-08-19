@@ -1,0 +1,51 @@
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form_nombre{
+    font-size: 18px;
+    margin: 10px;
+}
+
+.form_nombre_input{
+    margin: 10px;
+}
+
+.form_dosis_frecuencia{
+    display: flex;
+}
+
+.form_frecuencia{
+    font-size: 18px;
+    margin: 10px;
+}
+
+.form_frecuencia_input{
+    margin: 10px;
+}
+
+.form_dosis{
+    font-size: 18px;
+    margin: 10px;
+}
+
+.form_dosis_input{
+    margin: 10px;
+}
+
+.form_diario{
+    font-size: 18px;
+    margin: 10px;
+}
+
+.form_diario_legend{
+    font-size: 18px;
+    margin: 10px;
+}
+
+.form_submit{
+    font-size: 18px;
+    margin: 10px;
+
+}

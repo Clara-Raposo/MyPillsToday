@@ -47,18 +47,18 @@ router.get("/pills/:pills_id", async function(req, res) {
 
 router.post("/pills", async function(req, res) {
   const body = req.body; //obtiene los datos del body
-  const sql = `INSERT INTO pills(name, dosis, fecha,frecuency) VALUES ('${body.name}', ${body.dosis}, '${body.date}' ,${body.frecuency})`; //manda la orden a la base de datos
+  const sql = `INSERT INTO pills(name, dosis, frecuency, fecha) VALUES ('${body.name}', ${body.dosis}, '${body.frecuency}', '${body.date}');` //manda la orden a la base de datos
   
 
   try {
     await db(sql); //añade la tarea
-    const lastIdResult = await db('SELECT MAX(id) FROM pills')
+    const lastIdResult = await db('SELECT MAX(id) FROM pills;')
     const lastId = lastIdResult.data[0]['MAX(id)']
-    const sql1 = `INSERT INTO daily_pills(pill_id, breakfast, lunch, dinner) VALUES ('${lastId}', ${body.breakfast}, '${body.lunch}', '${body.dinner}')`
+    const sql1 = `INSERT INTO daily_pills (pill_id, breakfast, lunch, dinner) VALUES ('${lastId}', ${body.breakfast}, ${body.lunch}, ${body.dinner});`
     await db(sql1)
     const result = await db("SELECT * FROM pills;");
     const pills = result.data;
-    res.send(pills);
+    res.send({lastId});
   } catch (err) {
     res.status(500).send({ error: err.message });
   }

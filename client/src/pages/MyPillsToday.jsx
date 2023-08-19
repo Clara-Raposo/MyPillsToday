@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
 
 export const MyPillsToday = () =>{
 
@@ -12,6 +11,8 @@ export const MyPillsToday = () =>{
         getPills()
         console.log(pills)
     },[])
+
+    const dateToday = new Date().toISOString().slice(0,10);
 
     const getPills = () =>{
         fetch('api/pills/frecuency')
@@ -37,7 +38,7 @@ export const MyPillsToday = () =>{
             <h2>Desayuno</h2>
 
             <ul>
-                {pills.filter( pill => ( pill.breakfast == 1)).map( pill => (
+                {pills.filter( pill => ( pill.breakfast == 1)).filter( pill => (dateToday-pill.fecha)%pill.frecuency === 0).map( pill => (
                 <li key={pill.id}>
                 
                 <p>{pill.name} Dosis:{pill.dosis}</p>
