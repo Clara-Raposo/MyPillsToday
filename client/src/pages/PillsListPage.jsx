@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import {NavLink} from 'react-router-dom'
+import "./PillListPage.css"
 
 
 export const PillsListPage = () =>{
@@ -28,17 +29,21 @@ export const PillsListPage = () =>{
     }
 
     return <div>
-        <h1>My medication</h1>
+        <h1>Mi medicación</h1>
 
         { error && <p>{error}</p>}
         
-        <ul>
+        <ul className='pill-list-ul'>
             {pills.map( pill => (
+            
             <li key={pill.id}>
              
-              <NavLink to={`pills/${pill.id}`}>{pill.name}</NavLink>
+             <div className='list-item'> 
+                <NavLink to={`pills/${pill.id}`}>{pill.name}</NavLink>
+             </div>
 
-            </li>))}
+            </li>
+            ))}
         </ul>
        
         

@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import "./MyPillsToday.css"
 
 export const MyPillsToday = () =>{
 
     const [pills, setPills] = useState([])
     const [error, setError] = useState("")
-    const [daysLeft, setdaysLeft] = useState(0)
 
     useEffect(() =>{
         getPills()
@@ -41,9 +41,9 @@ export const MyPillsToday = () =>{
         { error && <p>{error}</p>}
         
        
-        <h1>Mis pastillas hoy</h1>
-        <div>
-            <h2>Desayuno</h2>
+        <h1>Mis pastillas de hoy</h1>
+        <div className="div-container">
+            <h2 className="div-container__h2">Desayuno</h2>
 
             <ul>
                 {pills.filter( pill => ( pill.breakfast == 1)).filter(pill => countDays(pill) === 0).map( pill => (
@@ -55,8 +55,8 @@ export const MyPillsToday = () =>{
             </ul>
 
         </div>
-        <div>
-            <h2>Comida</h2>
+        <div className="div-container">
+            <h2 className="div-container__h2">Comida</h2>
             <ul>
                 {pills.filter( pill => ( pill.lunch == 1)).filter(pill => countDays(pill) === 0).map( pill => (
                 <li key={pill.id}>
@@ -66,8 +66,8 @@ export const MyPillsToday = () =>{
                 </li>))}
             </ul>
         </div>
-        <div>
-            <h2>Cena</h2>
+        <div className="div-container">
+            <h2 className="div-container__h2">Cena</h2>
             <ul>
                 {pills.filter( pill => ( pill.dinner == 1)).filter(pill => countDays(pill) === 0).map( pill => (
                 <li key={pill.id}>
