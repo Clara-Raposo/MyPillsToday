@@ -20,8 +20,10 @@ router.get("/pills", async function(req, res) {
 
 router.get("/pills/frecuency", async function(req, res) {
   // Devuelve la lista completa de items
+
+   //Codigo previo linea 26: "SELECT pills.id, pills.name, pills.dosis, daily_pills.breakfast, daily_pills.lunch, daily_pills.dinner FROM pills INNER JOIN daily_pills ON pills.id=daily_pills.pill_id;"
   try {
-    const result = await db("SELECT pills.id, pills.name, pills.dosis, daily_pills.breakfast, daily_pills.lunch, daily_pills.dinner FROM pills INNER JOIN daily_pills ON pills.id=daily_pills.pill_id;");
+    const result = await db("SELECT * FROM pills LEFT JOIN daily_pills ON pills.id=daily_pills.pill_id;");
     const pills = result.data;
     res.send(pills);
   } catch (err) {
@@ -49,7 +51,6 @@ router.post("/pills", async function(req, res) {
   const body = req.body; //obtiene los datos del body
   const sql = `INSERT INTO pills(name, dosis, frecuency, fecha) VALUES ('${body.name}', ${body.dosis}, '${body.frecuency}', '${body.date}');` //manda la orden a la base de datos
   
-
   try {
     await db(sql); //añade la tarea
     const lastIdResult = await db('SELECT MAX(id) FROM pills;')

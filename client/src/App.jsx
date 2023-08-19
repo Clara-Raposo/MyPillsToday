@@ -26,7 +26,6 @@ function App() {
     </header>
     
     
-    {MyPillsToday}
     
       
       <main>
