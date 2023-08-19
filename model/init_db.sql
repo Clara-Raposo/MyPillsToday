@@ -14,7 +14,8 @@ CREATE TABLE pills(
     id INT NOT NULL AUTO_INCREMENT, 
     name VARCHAR(70) not null, 
     dosis INT not null,
-    frecuency INT not null,
+    fecha DATE,
+    frecuency INT DEFAULT 1,
     PRIMARY KEY (id) 
     );
 
@@ -22,9 +23,9 @@ CREATE TABLE daily_pills(
     pill_id INT NOT NULL, 
     breakfast BOOLEAN, 
     lunch BOOLEAN,
-    diner BOOLEAN,
+    dinner BOOLEAN,
     PRIMARY KEY (pill_id) 
     );
 
-INSERT INTO pills(name, dosis, frecuency) VALUES ('Ibuprofeno', 1, 7), ('Hierro', 1, 1);
-INSERT INTO daily_pills(pill_id, breakfast, lunch, diner) VALUES (1, 0, 1, 0), (2, 1, 0, 1)
+INSERT INTO pills(name, dosis, fecha, frecuency) VALUES ('Ibuprofeno', 1.5,'2023-08-13' ,7), ('Hierro', 1,'2023-08-13' ,1);
+INSERT INTO daily_pills(pill_id, breakfast, lunch, dinner) VALUES (1, 0, 1, 0), (2, 1, 0, 1)

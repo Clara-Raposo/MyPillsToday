@@ -15,23 +15,19 @@ import "./App.css";
 function App() {
 
   return (
-    <>
-    <header>
-      <Link to="/medication">logo</Link>
-      <br></br>
-      <Link to="/my-pills-today">home</Link>
-
+    <div className='App-container'>
+    <header className='header'>
+      <ul>
+        <li><Link to="/medication">logo </Link></li>
+        <li><Link to="/my-pills-today">Mis Pastillas de Hoy </Link></li>
+        <li><Link to="/add-pill">Añadir Pastilla </Link></li>
+        {/*<li><Link to="/configuration">Ajustes </Link></li>*/}
+      </ul>
     </header>
-    <div>
-    <Link to="/add-pill">Add a pill</Link>
-    </div>
-    <div>
-    <Link to="/configuration">Ajustes</Link>
-    </div>
+    
+    
     {MyPillsToday}
-    <div>
-
-    </div>
+    
       
       <main>
         <Routes>
@@ -45,7 +41,7 @@ function App() {
           <Route path="/my-pills-today" element = {<MyPillsToday/>} />
         </Routes>
       </main>
-    </>
+    </div>
   )
 }
 

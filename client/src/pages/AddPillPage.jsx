@@ -6,7 +6,10 @@ export const AddPillPage = () =>{
     const [pill, setPill] = useState({
         name: "",
         dosis: "null",
-        frecuency: "null",
+        frecuency: "",
+        breakfast: false,
+        lunch: false,
+        dinner: false, 
     })
     const [error, setError] = useState("");
     const navigate = useNavigate()
@@ -25,17 +28,19 @@ export const AddPillPage = () =>{
     }
 
     const addPill = async(pill) => {
+        const date = new Date().toISOString().slice(0,10);
         await fetch("api/pills", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
             },
-            body: JSON.stringify(pill)
+            body: JSON.stringify({...pill,date})
         })
         .catch(error => {
             setError(error)
         })
     }
+  
 
     return <div>
         <form onSubmit={(e)=>handleSubmit(e)}>
@@ -43,8 +48,7 @@ export const AddPillPage = () =>{
                 <input type="text" value={pill.name} name = "name" onChange={e => handleChange(e)}></input>
             </label>
             <label>Dosis
-            <select name="dosis" onChange={e => handleChange(e)}>
-                <option value="null">Seleccione una opción</option>
+            <select name="dosis" required placeholder='Seleccione una opcion' onChange={e => handleChange(e)}>
                 <option value="0.5">0.5</option>
                 <option value="1">1</option>
                 <option value="1.5">1.5</option>
@@ -52,14 +56,14 @@ export const AddPillPage = () =>{
                 </select>
             </label>
             <label>Frecuencia
-            <select name="frecuency" onChange={e => handleChange(e)}>
-                <option value="null">Seleccione una opción</option>
-                <option value="daily">Diaria</option>
-                <option value="weekly">Semanal</option>
-                <option value="monthly">Mensual</option>
-                
-            </select>
+            <input type = "number" name="frecuency"></input>
             </label>
+            <input type="checkbox" id="breakfasr" name="breakfast" value="false"></input>
+            <label for="breakfas"> Desayuno</label>
+            <input type="checkbox" id="lunch" name="lunch" value="false"></input>
+            <label for="lunch"> Comida</label>
+            <input type="checkbox" id="diner" name="diner" value="diner"></input>
+            <label for="diner"> Cena</label><br></br>
             <button type="submit">Añadir</button>
         </form>
 
