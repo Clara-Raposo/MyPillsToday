@@ -22,9 +22,9 @@ function App() {
     <div className='App-container'>
     <header className='header'>
       <ul>
-        <li><Link to="/medication">Logo </Link></li>
-        <li><Link to="/my-pills-today">Mis Pastillas de Hoy </Link></li>
-        <li><Link to="/add-pill">Añadir Pastilla </Link></li>
+        <li className='header-menu'><Link to="/medication">Logo </Link></li>
+        <li className='header-menu'><Link to="/my-pills-today">Mis Pastillas de Hoy </Link></li>
+        <li className='header-menu'><Link to="/add-pill">Añadir Pastilla </Link></li>
         {/*<li><Link to="/configuration">Ajustes </Link></li>*/}
       </ul>
     </header>

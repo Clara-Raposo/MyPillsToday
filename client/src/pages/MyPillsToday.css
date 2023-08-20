@@ -6,7 +6,61 @@
     width: 100%;
     background-color: white;
     text-align: center;
+    z-index: 1;
+    position: relative;
+    top: 12px;
+    width: 150px;
+    margin-top: 0px;
+    padding: 0px;
+    margin: auto;
 }
 .div-container{
-    border: solid 1px black;
+      padding: 0px;
+    margin: 0px;
+    padding-top: 20px
+}
+
+.div-container > ul{
+    padding: 0px;
+    margin: 0px;
+}
+.div-container__ul{
+    
+    margin: 0px;
+    padding: 20px 0 0 0;
+    border-top: solid 2px rgb(37, 78, 154);
+}
+
+.div-container__li{
+    margin: 0px;
+    padding: 2px 0;
+    width: 70%;
+    margin: auto;
+}
+
+.div-container__li-pill__p{
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    font-size: 18px;
+    padding-top: 1px;
+    /*border: solid 1px black;*/
+}
+
+.div-container__li-pill__h4{
+    margin: 0px ;
+    padding: 0px 10px 0px 0px;
+    text-transform: uppercase;
+}
+h4{
+    margin: 0px;
+    padding: 0px;
+}
+p{
+    margin: 0px;
+    padding: 0px;
+}
+
+.div-container__li-pill{
+    display: flex;
 }

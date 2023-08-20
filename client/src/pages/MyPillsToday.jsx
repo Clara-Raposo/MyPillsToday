@@ -42,42 +42,56 @@ export const MyPillsToday = () =>{
         
        
         <h1>Mis pastillas de hoy</h1>
-        <div className="div-container">
-            <h2 className="div-container__h2">Desayuno</h2>
+        
+            <div className="div-container">
+                <h2 className="div-container__h2">Desayuno</h2>
 
-            <ul>
-                {pills.filter( pill => ( pill.breakfast == 1)).filter(pill => countDays(pill) === 0).map( pill => (
-                <li key={pill.id}>
-                
-                <p>{pill.name} Dosis:{pill.dosis}</p>
+                <div className="div-container__ul">
+                    <ul>
+                        {pills.filter( pill => ( pill.breakfast == 1)).filter(pill => countDays(pill) === 0).map( pill => (
+                        <div className="div-container__li">
+                            <li key={pill.id}>
+                            
+                            <div className="div-container__li-pill"><div className="div-container__li-pill__h4"><h4>{pill.name}</h4></div> <div className="div-container__li-pill__p"><p>- Dosis: {pill.dosis}</p></div></div>
 
-                </li>))}
-            </ul>
+                            </li>
+                        </div>))}
+                    </ul>
+                </div>
 
-        </div>
-        <div className="div-container">
-            <h2 className="div-container__h2">Comida</h2>
-            <ul>
-                {pills.filter( pill => ( pill.lunch == 1)).filter(pill => countDays(pill) === 0).map( pill => (
-                <li key={pill.id}>
-                
-                <p>{pill.name} Dosis:{pill.dosis}</p>
+            </div>
+            <div className="div-container">
+                <h2 className="div-container__h2">Comida</h2>
+                <div className="div-container__ul">
+                    <ul>
+                        {pills.filter( pill => ( pill.lunch == 1)).filter(pill => countDays(pill) === 0).map( pill => (
+                        <div className="div-container__li">
+                        <li key={pill.id} >
+                        
+                        <div className="div-container__li-pill"><div className="div-container__li-pill__h4"><h4>{pill.name}</h4></div> <div className="div-container__li-pill__p"><p>- Dosis: {pill.dosis}</p></div></div>
 
-                </li>))}
-            </ul>
-        </div>
-        <div className="div-container">
-            <h2 className="div-container__h2">Cena</h2>
-            <ul>
-                {pills.filter( pill => ( pill.dinner == 1)).filter(pill => countDays(pill) === 0).map( pill => (
-                <li key={pill.id}>
-                
-                <p>{pill.name} Dosis:{pill.dosis}</p>
+                        </li>
+                        </div>))}
+                    </ul>
+                </div>
+            </div>
 
-                </li>))}
-            </ul>
-        </div>
+            <div className="div-container">
+                <h2 className="div-container__h2">Cena</h2>
+                <div className="div-container__ul">
+                    <ul>
+                        {pills.filter( pill => ( pill.dinner == 1)).filter(pill => countDays(pill) === 0).map( pill => (
+                        <div className="div-container__li">
+                        <li key={pill.id}>
+                        
+                        <div className="div-container__li-pill"><div className="div-container__li-pill__h4"><h4>{pill.name}</h4></div> <div className="div-container__li-pill__p"><p>- Dosis: {pill.dosis}</p></div></div>
+
+
+                        </li>
+                    </div>))}
+                    </ul>
+                </div>
+            </div>
+       
     </div>
 }
-
-//.filter( pill => (dateToday-pill.fecha)%pill.frecuency === 0)
