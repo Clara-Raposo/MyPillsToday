@@ -9,6 +9,7 @@ body{
   border: 1px solid black;
   margin: auto;
   font-size: 20px;
+  min-height: 600px;
 }
 .header{
   background-color: white;

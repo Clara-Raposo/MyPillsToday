@@ -11,7 +11,6 @@ export const PillsListPage = () =>{
 
     useEffect(() =>{
         getPills()
-        console.log(pills)
     },[])
 
     const getPills = () =>{
