@@ -16,6 +16,9 @@ body{
   font-weight: 800;
   color: black;
   margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 h1{
   font-size: 26px;
@@ -36,10 +39,26 @@ ul{
 }
 .header-menu{
   display: inline-block;
-  margin: 5px;
-  padding: 5px;
+  margin: 10px 0;
+  padding: 2px 8px;
   background-color: white;
+  font-weight: 500;
 }
+
+.header-menu > a:link{
+  color:rgb(37, 78, 154);
+  padding: 5px 2px;
+}
+.header-menu > a:visited{
+  color:rgb(37, 78, 154);
+  padding: 5px 2px;
+}
+.header-menu > a:active{
+  color:rgb(37, 78, 154);
+  border: solid 1px black;
+  padding: 2px 8px;
+}
+
 a{
   text-decoration: none;
 }

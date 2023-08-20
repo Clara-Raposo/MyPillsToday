@@ -1,6 +1,5 @@
 # scaffolding-demo
 Ejecuta `node model/database.js`
-npm install react -icons --save
-npm install @mui/icons-material
+npm install react-icons
 poner en la terminal npm start
-entrat en la carpetaa client y poner npm run dev
+entrat en la carpeta client y poner npm run dev

@@ -12,6 +12,7 @@ import { AlarmsChanged } from "./pages/AlarmsChanged.jsx";
 import { MyPillsToday } from "./pages/MyPillsToday.jsx";
 //import MaterialIcon, {colorPalette} from 'material-icons-react';
 //import { AccessAlarm, ThreeDRotation } from '@mui/icons-material';
+
 import "./App.css";
 
 function App() {
@@ -21,12 +22,11 @@ function App() {
   return (
     <div className='App-container'>
     <header className='header'>
-      <ul>
-        <li className='header-menu'><Link to="/medication">Logo </Link></li>
-        <li className='header-menu'><Link to="/my-pills-today">Mis Pastillas de Hoy </Link></li>
-        <li className='header-menu'><Link to="/add-pill">Añadir Pastilla </Link></li>
+        <div className='header-menu'><Link to="/medication"> HOME </Link></div>
+        <div className='header-menu'><Link to="/my-pills-today">MIS PASTILLAS DE HOY</Link></div>
+        <div className='header-menu'><Link to="/add-pill"> + </Link></div>
         {/*<li><Link to="/configuration">Ajustes </Link></li>*/}
-      </ul>
+
     </header>
 
     
