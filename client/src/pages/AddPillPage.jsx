@@ -57,42 +57,41 @@ export const AddPillPage = () =>{
         <form onSubmit={(e)=>handleSubmit(e)}>
             <h1>Añade una pastilla</h1>
 
-            {date}
-
             <div className='form_nombre'>
-                <label >Nombre:
-                    <input className='form_nombre_input' type="text" value={pill.name} name = "name" onChange={e => handleChange(e)}></input>
-                </label>
+                  <div className='form_nombre__label'><label htmlFor='name'>Nombre: </label></div>
+                <div className='form_nombre__input'><input className='form_nombre_input' type="text" value={pill.name} id="name" required name = "name" onChange={e => handleChange(e)}></input></div>
+               
             </div>
 
-            <div className='form_dosis_frecuencia'>
+        
                 <div className='form_dosis'>
-                    <label>Dosis:
-                        <select className='form_dosis_input' name="dosis" required placeholder='Seleccione una opcion' onChange={e => handleChange(e)}>
+                    <label htmlFor='dosis'>Dosis:</label>
+                        <select className='form_dosis_input' name="dosis" id="dosis" required placeholder='Seleccione una opcion' onChange={e => handleChange(e)}>
                             <option value="null">Seleccione una dosis</option>
                             <option value="0.5">0.5</option>
                             <option value="1">1</option>
                             <option value="1.5">1.5</option>
                             <option value="2">2</option>
-                            </select>
-                    </label>
+                            </select><span>PASTILLAS</span>
                 </div>
 
                 <div className='form_frecuencia'>
-                    <label>Frecuencia:
-                        <input className='form_frecuencia_input' type = "number" name="frecuency" value={pill.frecuency} onChange={e => handleChange(e)}></input>
-                    </label>
+                    <label htmlFor='frecuencia'>Frecuencia:</label>
+                        <input className='form_frecuencia_input' type = "number" name="frecuency" id="frecuencia" required value={pill.frecuency} onChange={e => handleChange(e)}></input><span>DÍAS</span>
+                    
                 </div>
-            </div>
+        
 
             <div className='form_diario'>
                 <legend className='form_diario_legend'>Elige cuando tomarla:</legend>
-                <input type="checkbox" id="breakfast" name="breakfast" checked={pill.breakfast} onChange={(e)=>handleCheckbox(e)}></input>
-                <label for="breakfast"> Desayuno</label>
-                <input type="checkbox" id="lunch" name="lunch" checked={pill.lunch} onChange={(e) => handleCheckbox(e)}></input>
-                <label for="lunch"> Comida</label>
-                <input type="checkbox" id="dinner" name="dinner" checked={pill.dinner} onChange={(e) => handleCheckbox(e)}></input>
-                <label for="dinner"> Cena</label>
+                <div className='form_diario__options'>
+                    <input type="checkbox" id="breakfast" name="breakfast" checked={pill.breakfast} onChange={(e)=>handleCheckbox(e)}></input>
+                    <label for="breakfast"> Desayuno</label>
+                    <input type="checkbox" id="lunch" name="lunch" checked={pill.lunch} onChange={(e) => handleCheckbox(e)}></input>
+                    <label for="lunch"> Comida</label>
+                    <input type="checkbox" id="dinner" name="dinner" checked={pill.dinner} onChange={(e) => handleCheckbox(e)}></input>
+                    <label for="dinner"> Cena</label>
+                </div>
             </div>
             
             <button className="form_submit" type="submit">Añadir</button>
