@@ -21,7 +21,6 @@ router.get("/pills", async function(req, res) {
 router.get("/pills/frecuency", async function(req, res) {
   // Devuelve la lista completa de items
 
-   //Codigo previo linea 26: "SELECT pills.id, pills.name, pills.dosis, daily_pills.breakfast, daily_pills.lunch, daily_pills.dinner FROM pills INNER JOIN daily_pills ON pills.id=daily_pills.pill_id;"
   try {
     const result = await db("SELECT * FROM pills LEFT JOIN daily_pills ON pills.id=daily_pills.pill_id;");
     const pills = result.data;

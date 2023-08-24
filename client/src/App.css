@@ -43,19 +43,22 @@ ul{
   padding: 2px 8px;
   background-color: white;
   font-weight: 500;
+  border: solid 2px white;
 }
 
 .header-menu > a:link{
   color:rgb(37, 78, 154);
   padding: 5px 2px;
+  border: solid 2px white;
 }
 .header-menu > a:visited{
   color:rgb(37, 78, 154);
   padding: 5px 2px;
+  border: solid 2px white;
 }
 .header-menu > a:active{
   color:rgb(37, 78, 154);
-  border: solid 1px black;
+  border: solid 2px black;
   padding: 2px 8px;
 }
 
